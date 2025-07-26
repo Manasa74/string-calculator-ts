@@ -9,11 +9,13 @@ export function addString(input: string): number {
         const [delimiterPart, numbersPart] = input.split("\n");
         numbersInput = numbersPart;
 
-        const delimiterMatch = delimiterPart.match(/\[(.+)\]/);
-        if (delimiterMatch) {
+        const delimiterMatches = [...delimiterPart.matchAll(/\[(.+?)\]/g)];
+        if (delimiterMatches.length > 0) {
             // Escape RegExp special characters inside delimiter
-            const escapedDelimiter = delimiterMatch[1].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-            delimiterPattern = new RegExp(escapedDelimiter);
+            const escapedDelimiters = delimiterMatches.map(match =>
+                match[1].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+            );
+            delimiterPattern = new RegExp(escapedDelimiters.join("|"));
         } else {
             const customDelimiter = delimiterPart.charAt(2);
             delimiterPattern = new RegExp(`[${customDelimiter}\n]`);
