@@ -32,4 +32,8 @@ describe("String Calculator", () => {
     test("supports delimiters of any length in format //[delimiter]\\n", () => {
         expect(addString("//[***]\n1***2***3")).toBe(6);
     });
+
+    test("supports multiple delimiters like //[delim1][delim2]\\n", () => {
+        expect(addString("//[*][%]\n1*2%3")).toBe(6);
+    });
 });
