@@ -16,4 +16,8 @@ describe("String Calculator", () => {
     test("supports newlines as delimiter", () => {
         expect(addString("1\n2,3")).toBe(6);
     });
+
+    test("supports custom delimiter", () => {
+        expect(addString("//;\n1;2")).toBe(3);
+    });
 });
