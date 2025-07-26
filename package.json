@@ -1,0 +1,26 @@
+{
+  "name": "string-calculator-ts",
+  "version": "1.0.0",
+  "description": "TDD Kata - String Calculator using TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manasa74/string-calculator-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manasa74/string-calculator-ts/issues"
+  },
+  "homepage": "https://github.com/Manasa74/string-calculator-ts#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  }
+}
