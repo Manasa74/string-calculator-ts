@@ -11,7 +11,10 @@ This project is a solution to the **String Calculator TDD Kata**, implemented in
 - Return the sum for two comma-separated numbers
 - Support newlines (`\n`) as valid delimiters
 - Support custom single-character delimiters (e.g. `"//;\n1;2"` → `3`)
-- Throw an error for negative numbers, listing all negatives found
+- Throw an error for negative numbers, listing all negatives found.
+- Ignore numbers greater than 1000 (e.g. `"2,1001"` → `2`)
+- Support delimiters of any length (e.g. `"//[***]\n1***2***3"` → `6`)
+- Support multiple delimiters (e.g. `"//[*][%]\n1*2%3"` → `6`)
 
 ## Tech Stack
 
@@ -66,6 +69,15 @@ console.log(addString("//;\n1;2"));     // Output: 3
 
 // Negative numbers (throws error)
 console.log(addString("1,-2,3"));       // Throws: Error: negative numbers not allowed: -2
+
+// Ignore numbers > 1000
+console.log(addString("2,1001"));       // Output: 2
+
+// Delimiter of any length
+console.log(addString("//[***]\n1***2***3")); // Output: 6
+
+// Multiple delimiters
+console.log(addString("//[*][%]\n1*2%3"));    // Output: 6
 ```
 
 ## Test Coverage
@@ -76,6 +88,9 @@ The project includes test cases for:
 - Comma and newline delimiters
 - Custom delimiters (e.g., //;\n1;2)
 - Handling of negative numbers with descriptive errors
+- Numbers greater than 1000 are ignored
+- Delimiters of any length (e.g., //[***])
+- Multiple delimiters (e.g., //[*][%])
 
 ##  Tech Stack
 
