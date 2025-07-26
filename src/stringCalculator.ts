@@ -1,3 +1,5 @@
 export function addString(input: string): number {
-  throw new Error("TODO");
+    // Given string is empty
+    if (input === "") return 0;
+    return -1;
 }
